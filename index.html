@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipdown Timer</title>
+    <link rel="stylesheet" href="css/flipdown.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/flipdown.js"></script>
+</head>
+
+<body>
+    <div class="timer">
+        <h1>Flipdown Timer</h1>
+        <div id="flipdown" class="flipdown"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let timer_ = 1600905599//unix timestamp
+            let flipdown = new FlipDown(timer_)
+                .start()
+                .ifEnded(() => {
+                    document.querySelector(".flipdown").innerHTML = `<h2>Timer is ended</h2>`;
+                })
+        })
+    </script>
+</body>
+
+</html>
